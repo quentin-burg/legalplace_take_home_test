@@ -1,12 +1,17 @@
-import { Drug, Pharmacy } from "./pharmacy";
-
+import { Pharmacy } from "./pharmacy";
+import { Daflagan } from "./drugs/dafalgan";
+import { Doliprane } from "./drugs/doliprane";
+import { Fervex } from "./drugs/fervex";
+import { HerbalTea } from "./drugs/herbal_tea";
+import { MagicPill } from "./drugs/magic_pill";
 import fs from "fs";
 
 const drugs = [
-  new Drug("Doliprane", 20, 30),
-  new Drug("Herbal Tea", 10, 5),
-  new Drug("Fervex", 12, 35),
-  new Drug("Magic Pill", 15, 40),
+  new Doliprane(20, 30),
+  new MagicPill(10, 10),
+  new HerbalTea(10, 5),
+  new Daflagan(2, 10),
+  new Fervex(15, 35),
 ];
 const pharmacy = new Pharmacy(drugs);
 
@@ -26,7 +31,7 @@ fs.writeFile(
     } else {
       console.log("success");
     }
-  },
+  }
 );
 
 /* eslint-enable no-console */
